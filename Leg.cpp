@@ -17,6 +17,20 @@ void Leg::rotateCoxa(double angle, float dt, float speed) {
 	m_tibia.moveLine(delta);
 }
 
+void Leg::rotateFemur(double angle, float dt, float speed) {
+	sf::Vector2f original{ m_femur.getVertexArray()[1].position.x, m_femur.getVertexArray()[1].position.y };
+	m_femur.rotateLine(angle, dt, speed);
+
+	sf::Vector2f newOrigin{ m_femur.getVertexArray()[1].position.x, m_femur.getVertexArray()[1].position.y };
+	sf::Vector2f delta{ newOrigin - original };
+
+	m_tibia.moveLine(delta);
+}
+
+void Leg::rotateTibia(double angle, float dt, float speed) {
+	m_tibia.rotateLine(angle, dt, speed);
+}
+
 void Leg::draw(sf::RenderWindow& window) {
 	m_coxa.color(m_color1);
 	m_femur.color(m_color2);

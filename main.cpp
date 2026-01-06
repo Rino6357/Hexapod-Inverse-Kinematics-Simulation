@@ -24,6 +24,8 @@ int main() {
 
         float deltaTime = clock.restart().asSeconds();
         first.rotateCoxa(PI * 2, deltaTime);
+        first.rotateFemur(PI * 2, deltaTime, 2.5f);
+        first.rotateTibia(PI * 2, deltaTime, 4.f);
 
         window.clear(sf::Color(50, 40, 80));
         first.draw(window);
