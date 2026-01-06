@@ -6,6 +6,17 @@ Leg::Leg(sf::Vector2f joint1, sf::Vector2f joint2, sf::Vector2f joint3, sf::Vect
 	this->color();
 }
 
+void Leg::rotateCoxa(double angle, float dt, float speed) {
+	sf::Vector2f original { m_coxa.getVertexArray()[1].position.x, m_coxa.getVertexArray()[1].position.y };
+	m_coxa.rotateLine(angle, dt, speed);
+
+	sf::Vector2f newOrigin{ m_coxa.getVertexArray()[1].position.x, m_coxa.getVertexArray()[1].position.y };
+	sf::Vector2f delta{ newOrigin - original };
+
+	m_femur.moveLine(delta);
+	m_tibia.moveLine(delta);
+}
+
 void Leg::draw(sf::RenderWindow& window) {
 	m_coxa.color(m_color1);
 	m_femur.color(m_color2);

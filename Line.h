@@ -12,6 +12,10 @@ public:
 
 	void color(sf::Color color);
 
+	void moveLine(sf::Vector2f delta);
+
+	sf::VertexArray getVertexArray() const;
+
 private:
 	float m_length() const;
 

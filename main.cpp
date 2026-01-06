@@ -23,6 +23,7 @@ int main() {
         }
 
         float deltaTime = clock.restart().asSeconds();
+        first.rotateCoxa(PI * 2, deltaTime);
 
         window.clear(sf::Color(50, 40, 80));
         first.draw(window);
