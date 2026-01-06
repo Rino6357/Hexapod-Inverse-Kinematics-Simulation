@@ -10,6 +10,8 @@ public:
 
 	void draw(sf::RenderWindow& window) const;
 
+	void color(sf::Color color);
+
 private:
 	float m_length() const;
 
