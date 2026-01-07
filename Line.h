@@ -14,10 +14,11 @@ public:
 
 	void moveLine(sf::Vector2f delta);
 
+	float length() const;
+
 	sf::VertexArray getVertexArray() const;
 
 private:
-	float m_length() const;
 
 	sf::VertexArray m_vertexArray{ sf::PrimitiveType::Lines };
 	sf::Vector2f m_origin{};

@@ -16,6 +16,8 @@ public:
 
 	void color(sf::Color color1 = sf::Color::Red, sf::Color color2 = sf::Color::White, sf::Color color3 = sf::Color::Green);
 
+	bool IK2D(float x, float y, float dt);
+
 private:
 	sf::Vector2f m_joint1{};
 	sf::Vector2f m_joint2{};
